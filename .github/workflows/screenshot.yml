@@ -21,7 +21,7 @@ jobs:
           $shell.minimizeall()
 
       - name: Run the command to be screenshotted
-        run: start cmd
+        run: Start-Process -FilePath cmd -WindowStyle maximized -ArgumentList "/k", "ruby", "script-to-run.rb", "&&", "pause"
         shell: powershell
 
       - name: Take a screenshot
