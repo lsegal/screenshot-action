@@ -15,6 +15,12 @@ jobs:
     # Only if your repo contains the script you want screenshotted
     - uses: actions/checkout@v2
 
+    - name: Minimize all windows
+      shell: powershell
+      run: |
+        $shell = New-Object -ComObject "Shell.Application"
+        $shell.minimizeall()
+
     - name: Run the command to be screenshotted
       run: start cmd.exe @cmd /k "echo hi && pause"
       shell: cmd
