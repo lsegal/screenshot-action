@@ -22,8 +22,8 @@ jobs:
         $shell.minimizeall()
 
     - name: Run the command to be screenshotted
-      run: start cmd.exe @cmd /k "echo hi && pause"
-      shell: cmd
+      run: start cmd
+      shell: powershell
 
     - name: Take a screenshot
       shell: powershell
